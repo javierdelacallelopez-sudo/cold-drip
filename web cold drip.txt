@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cold Drip | Moda Urbana Auténtica</title>
+    <!-- Incluir Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuración de la fuente y paleta de colores (Inspirada en el logo) -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        :root {
+            --primary-blue: #00C4FF; /* Nuevo Azul Eléctrico/Cian Brillante (El 'Drip') */
+            --dark-bg: #040E1B;     /* Nuevo Fondo: Azul Oscuro Profundo (Inspirado en el fondo del logo) */
+            --card-bg: #0B1B32;     /* Nuevo Fondo de Tarjeta: Azul Marino Ligeramente más Claro */
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: #E5E7EB; /* Gris claro para el texto */
+        }
+        .text-cold-drip { color: var(--primary-blue); }
+        .bg-cold-drip { background-color: var(--primary-blue); }
+        /* Ajustar el hover para el nuevo azul primario */
+        .hover-cold-drip:hover { background-color: #0099cc; } 
+        .card { 
+            background-color: var(--card-bg);
+            border-color: var(--primary-blue); /* Borde de tarjeta azul brillante */
+        }
+        /* Ajustar el fondo de las secciones principales a un tono más profundo */
+        .bg-section { background-color: #07172B; }
+        .bg-footer { background-color: #010810; }
+        .video-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Sección de Cabecera y Navegación (Responsive: Menú hamburguesa en móvil) -->
+    <header class="sticky top-0 z-50 bg-[var(--dark-bg)]/90 backdrop-blur-sm shadow-xl">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-3xl font-extrabold tracking-widest uppercase text-white">
+                        <span class="text-cold-drip">COLD</span> DRIP
+                    </a>
+                </div>
+                
+                <!-- Enlaces de Navegación (Ocultos en móvil) -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4 text-sm font-medium">
+                        <a href="#proposta" class="px-3 py-2 rounded-lg hover:bg-[var(--card-bg)] transition duration-150">Nuestra Propuesta</a>
+                        <a href="#video-tienda" class="px-3 py-2 rounded-lg hover:bg-[var(--card-bg)] transition duration-150">Tienda</a>
+                        <a href="#oferta" class="px-3 py-2 rounded-lg hover:bg-[var(--card-bg)] transition duration-150">Ofertas de Hoy</a>
+                        <a href="#contacto" class="px-3 py-2 rounded-lg hover:bg-[var(--card-bg)] transition duration-150">Contacto</a>
+                        <a href="#" class="bg-cold-drip hover-cold-drip text-white px-4 py-2 rounded-full text-base font-semibold transition duration-200 shadow-xl">
+                            🛒 Tienda
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Botón de Menú Móvil -->
+                <div class="md:hidden">
+                    <button id="menu-button" class="inline-flex items-center justify-center p-2 rounded-lg text-gray-400 hover:text-white hover:bg-[var(--card-bg)] focus:outline-none focus:ring-2 focus:ring-inset focus:ring-cold-drip">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Menú Móvil (Toggleable) -->
+        <div class="hidden md:hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-sm font-medium bg-[var(--dark-bg)] shadow-md">
+                <a href="#proposta" class="block px-3 py-2 rounded-md hover:bg-[var(--card-bg)]">Nuestra Propuesta</a>
+                <a href="#video-tienda" class="block px-3 py-2 rounded-md hover:bg-[var(--card-bg)]">Tienda</a>
+                <a href="#oferta" class="block px-3 py-2 rounded-md hover:bg-[var(--card-bg)]">Ofertas de Hoy</a>
+                <a href="#contacto" class="block px-3 py-2 rounded-md hover:bg-[var(--card-bg)]">Contacto</a>
+                <a href="#" class="block mt-2 text-center bg-cold-drip hover-cold-drip text-white px-3 py-2 rounded-full font-semibold">
+                    🛒 Ir a la Tienda
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        
+        <!-- Sección HERO (Impacto Visual - Texto ajustado para móvil) -->
+        <section class="relative h-[600px] md:h-[700px] flex items-center justify-center overflow-hidden">
+            <!-- Imagen de fondo estilizada -->
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://placehold.co/1200x700/0B1B32/00C4FF?text=Moda+Urbana+Juvenil');">
+                <!-- Usando una imagen de placeholder que simula el estilo urbano juvenil con la nueva paleta -->
+            </div>
+            <!-- Superposición de degradado azul -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[var(--dark-bg)] via-[var(--dark-bg)]/40 to-transparent"></div>
+            
+            <div class="relative z-10 text-center max-w-4xl px-4">
+                <!-- Titular: Escalado para ser legible en móvil (text-4xl) y grande en desktop (lg:text-7xl) -->
+                <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold leading-tight tracking-tighter text-white drop-shadow-lg">
+                    <span class="text-cold-drip">COLD DRIP:</span> Tu Estilo, Nuestro Flow.
+                </h1>
+                <!-- Subtítulo: Escalado para móvil (text-lg) y grande en desktop (lg:text-2xl) -->
+                <p class="mt-4 text-lg sm:text-xl lg:text-2xl text-gray-300 font-light">
+                    La moda urbana auténtica, a precios asequibles y con estilo. Elegida y vendida **por jóvenes, para jóvenes** en España.
+                </p>
+                <a href="#" class="mt-8 inline-block bg-cold-drip hover-cold-drip text-white text-lg font-bold py-4 px-12 rounded-full transition duration-300 transform hover:scale-105 shadow-2xl">
+                    ¡Descubre el Drip!
+                </a>
+                <p class="mt-4 text-sm text-gray-400">
+                    Target: 13-22 años | España
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección de Propuesta de Valor Única (Grid responsivo: 1 columna en móvil, 3 en desktop) -->
+        <section id="proposta" class="py-20 bg-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white sm:text-5xl">
+                        Moda de Jóvenes, para Jóvenes.
+                    </h2>
+                    <p class="mt-4 text-lg text-gray-400">
+                        Acabamos con la desconfianza de las compras online de moda.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Tarjeta 1: Confianza (We buy and sell it) -->
+                    <div class="card p-8 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-t-4 border-cold-drip">
+                        <svg class="h-10 w-10 text-cold-drip mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a12.004 12.004 0 01-8.618 3.04A12.01 12.01 0 0012 20.944a12.01 12.01 0 008.618-17.92z" /></svg>
+                        <h3 class="text-2xl font-semibold text-white">100% Verificado y Auténtico</h3>
+                        <p class="mt-4 text-gray-300">
+                            ¿Cansado de no fiarte de los "testers"? En Cold Drip, nosotros compramos y vendemos la ropa. La autenticidad y la calidad están garantizadas por el equipo.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta 2: Estilo (Cheap Stylish Clothes) -->
+                    <div class="card p-8 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-t-4 border-cold-drip">
+                        <svg class="h-10 w-10 text-cold-drip mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 10l-2 1m0 0l-2-1m2 1v5m-2 3h4M6 16h12a2 2 0 002-2V8a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z" /></svg>
+                        <h3 class="text-2xl font-semibold text-white">El Mejor 'Drip' Asequible</h3>
+                        <p class="mt-4 text-gray-300">
+                            Ofrecemos ropa con el mejor *flow* del momento sin vaciarte el bolsillo. Estilo que marca tendencia, diseñado para la juventud de hoy.
+                        </p>
+                    </div>
+
+                    <!-- Tarjeta 3: Marketing (Bags like Backpacks) -->
+                    <div class="card p-8 rounded-xl shadow-2xl transition duration-300 hover:scale-[1.02] border-t-4 border-cold-drip">
+                        <svg class="h-10 w-10 text-cold-drip mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.657 0 3 .895 3 2s-1.343 2-3 2v2m0 0v2m0-8a4 4 0 110 8c-2.435 0-3.513-1.89-4-3 0 0 0 0 0 0A4 4 0 0112 8z" /></svg>
+                        <h3 class="text-2xl font-semibold text-white">Publicidad en la Calle</h3>
+                        <p class="mt-4 text-gray-300">
+                            Nuestras bolsas de compra son mochilas para que puedas usarlas a diario. Lleva el logo de Cold Drip contigo y ayuda a que la comunidad crezca.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Nueva Sección de Video de la Tienda -->
+        <section id="video-tienda" class="py-20 bg-[var(--dark-bg)]">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase tracking-widest text-cold-drip">¡Un vistazo por dentro!</span>
+                <h2 class="mt-2 text-4xl font-extrabold text-white sm:text-5xl">
+                    Visita Nuestra Tienda Física
+                </h2>
+                <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+                    Si estás en Madrid, ven a experimentar el 'drip' en persona.
+                </p>
+
+                <!-- Contenedor del Video (centrado y responsivo) -->
+                <div class="mt-10 video-container p-4 card border-2">
+                    <video 
+                        class="w-full rounded-lg shadow-2xl" 
+                        controls 
+                        autoplay
+                        muted
+                        loop
+                        src="Video October 15, 2025 - 3:40PM.mp4"
+                        contentFetchId="uploaded:Video October 15, 2025 - 3:40PM.mp4"
+                    >
+                        Tu navegador no soporta el elemento de video.
+                    </video>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección de Oferta Especial (Marketing Strategy) -->
+        <section id="oferta" class="py-20 bg-section">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <span class="text-sm font-semibold uppercase tracking-widest text-cold-drip">¡Solo por tiempo limitado!</span>
+                <h2 class="mt-2 text-4xl font-extrabold text-white sm:text-5xl">
+                    Descuento Diario Progresivo
+                </h2>
+                <p class="mt-4 text-xl text-gray-300 max-w-3xl mx-auto">
+                    Aprovecha nuestra promoción única: cada día que pasa, el descuento en productos seleccionados aumenta.
+                </p>
+
+                <!-- Tarjeta del Descuento -->
+                <div class="mt-10 max-w-lg mx-auto card p-8 rounded-xl shadow-2xl border-2 border-cold-drip relative overflow-hidden">
+                    <!-- Mantengo el rojo aquí por marketing, ya que indica URGENCIA y es un buen contraste visual -->
+                    <div id="offer-day-container" class="absolute top-0 right-0 bg-red-600 text-white font-bold p-2 px-4 rounded-bl-xl shadow-lg">
+                        DÍA <span id="current-day">1</span>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <p class="text-6xl font-extrabold text-cold-drip"><span id="current-discount">1</span>% OFF</p>
+                        <p class="mt-2 text-gray-300 font-medium">de descuento en productos seleccionados.</p>
+                        <p class="mt-4 text-sm text-gray-400">
+                            (Hoy es el día <span id="current-day-small">1</span>, por lo tanto tienes un <span id="current-discount-small">1</span>% de descuento.)
+                        </p>
+                        <a href="#" class="mt-6 inline-block bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 shadow-xl">
+                            Ver Productos en Oferta
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Llamada a la Acción Final -->
+        <section class="py-16 bg-cold-drip">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Es el momento de renovar tu armario.
+                </h2>
+                <p class="mt-3 text-xl text-white font-light opacity-90">
+                    Únete a la comunidad de moda juvenil más auténtica de España.
+                </p>
+                <a href="#" class="mt-8 inline-block bg-white text-cold-drip text-xl font-bold py-4 px-16 rounded-full transition duration-300 transform hover:scale-105 shadow-xl">
+                    Comprar Ahora
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página (Footer - Estructura mejorada para móvil) -->
+    <footer id="contacto" class="bg-footer py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between space-y-8 md:space-y-0">
+                <div class="flex-shrink-0">
+                    <h3 class="text-2xl font-extrabold tracking-widest uppercase text-white">
+                        <span class="text-cold-drip">COLD</span> DRIP
+                    </h3>
+                    <p class="mt-2 text-gray-400 text-sm">Moda. Autenticidad. Comunidad.</p>
+                    <p class="mt-1 text-gray-400 text-sm">© 2024 Cold Drip. Todos los derechos reservados.</p>
+                </div>
+                
+                <div class="md:mt-0">
+                    <h4 class="text-lg font-semibold text-white mb-4">Síguenos en Redes</h4>
+                    <div class="flex space-x-6">
+                        <!-- Placeholder para iconos de redes sociales (ej: Instagram, TikTok) -->
+                        <a href="#" class="text-gray-400 hover:text-cold-drip transition duration-200">
+                            <!-- Icono de Instagram (SVG simple) -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2zm-.2 2.162c-2.13 0-3.838 1.708-3.838 3.838v8.001c0 2.13 1.708 3.838 3.838 3.838h8.001c2.13 0 3.838-1.708 3.838-3.838v-8.001c0-2.13-1.708-3.838-3.838-3.838H7.6zm8.152 2.531c-.6 0-1.1.5-1.1 1.1s.5 1.1 1.1 1.1c.6 0 1.1-.5 1.1-1.1s-.5-1.1-1.1-1.1zM12 9.5c-2.5 0-4.5 2-4.5 4.5s2 4.5 4.5 4.5 4.5-2 4.5-4.5-2-4.5-4.5-4.5zm0 1c1.93 0 3.5 1.57 3.5 3.5s-1.57 3.5-3.5 3.5-3.5-1.57-3.5-3.5 1.57-3.5 3.5-3.5z"/></svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-cold-drip transition duration-200">
+                            <!-- Icono de TikTok (SVG simple) -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12.3 2.1c1.1 0 1.9.9 1.9 2v3.7c0 .2-.2.4-.4.4-.1 0-.3-.1-.3-.2V4.1c0-.4-.4-.7-.8-.7s-.8.3-.8.7v16.1c0 .4.4.7.8.7s.8-.3.8-.7v-3.8c0-.2.2-.4.4-.4.1 0 .3.1.3.2v4.1c0 .4-.4.7-.8.7s-.8-.3-.8-.7V7.1c0-.4-.4-.7-.8-.7s-.8.3-.8.7v13.1c0 .4.4.7.8.7s.8-.3.8-.7V9.7c0-.2.2-.4.4-.4.1 0 .3.1.3.2v11.1c0 .4.4.7.8.7s.8-.3.8-.7V4.1c0-.4-.4-.7-.8-.7s-.8.3-.8.7v3.7c0 .2-.2.4-.4.4-.1 0-.3-.1-.3-.2V2.1z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Lógica de JavaScript para el menú móvil y la simulación del descuento diario.
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // 1. Toggle del Menú Móvil
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Lógica del Descuento Diario Progresivo
+            // SIMULACIÓN: Calcula el día de la promoción.
+            
+            const startDate = new Date('2024-01-01'); // Fecha de inicio arbitraria de la promoción
+            const today = new Date();
+            
+            // Calcular la diferencia en milisegundos
+            const diffTime = today - startDate;
+            // Convertir milisegundos a días
+            let diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+            
+            // Si la fecha actual es anterior a la de inicio, o si han pasado demasiados días, reiniciamos la simulación
+            if (diffDays < 0 || diffDays > 30) {
+                diffDays = 1; // Empezar en el día 1 si la fecha es muy lejana o anterior
+            } else {
+                // El descuento es igual al número de días transcurridos.
+                // Sumamos 1 porque si la diferencia es 0 (mismo día), es el día 1.
+                diffDays = diffDays + 1;
+            }
+
+            const discount = diffDays; 
+
+            // Actualizar los elementos de la oferta
+            document.getElementById('current-day').textContent = diffDays;
+            document.getElementById('current-day-small').textContent = diffDays;
+            document.getElementById('current-discount').textContent = discount;
+            document.getElementById('current-discount-small').textContent = discount;
+
+            // Ajustar el color del día de la oferta para hacerlo más impactante a medida que avanza
+            const offerContainer = document.getElementById('offer-day-container');
+            // La clase bg-red-600 proporciona urgencia, por lo que se mantiene.
+            
+            if (discount > 10) {
+                offerContainer.classList.remove('bg-red-600');
+                offerContainer.classList.add('bg-yellow-500');
+            }
+            if (discount > 20) {
+                 offerContainer.classList.remove('bg-yellow-500');
+                offerContainer.classList.add('bg-green-600');
+            }
+
+        });
+    </script>
+</body>
+</html>
